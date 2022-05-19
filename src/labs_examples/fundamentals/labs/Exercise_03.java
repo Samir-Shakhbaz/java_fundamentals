@@ -13,7 +13,7 @@ public class Exercise_03 {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello Friday!");
+        System.out.println("Hello Sunday!");
         System.out.println("Check out my first program!");
 
 
