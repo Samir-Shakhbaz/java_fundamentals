@@ -25,5 +25,12 @@ public class Exercise_02 {
 
         // write code here
 
+            int i = 10;
+            double d = i;
+            System.out.println("Value of the double is " + d);
+
+            double b = 10.5;
+            int a = (int)b;
+        System.out.println("Value of the int is "+a);
     }
 }
