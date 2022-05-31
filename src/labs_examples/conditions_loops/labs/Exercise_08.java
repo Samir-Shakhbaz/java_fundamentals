@@ -8,4 +8,9 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_08 {
+    public static void main(String[] args) {
+        for(int x = 1000; x > 0; x = x -3){
+            System.out.println(x);
+        }
+    }
 }
