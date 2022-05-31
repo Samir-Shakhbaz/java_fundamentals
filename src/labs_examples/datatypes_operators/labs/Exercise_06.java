@@ -14,5 +14,11 @@ public class Exercise_06 {
 
         // write code here
 
+        float r = 3.14f;
+        float h = 5f;
+        double result = 2 * 3.1416 * 3.14 * 3.14 + 2 * 3.1416 * 3.14 * 5;
+        System.out.println("Surface area of a cylinder is " + result);
+
+
     }
 }

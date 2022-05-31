@@ -25,5 +25,13 @@ public class Exercise_07 {
 
         // write completed code here
 
+        int hour = 24 * days;
+        long min = hour * 60;
+        long sec = min * 60;
+
+        System.out.println(sec);
+
+
+
     }
 }
