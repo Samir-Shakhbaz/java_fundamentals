@@ -9,5 +9,13 @@ package labs_examples.arrays.labs;
  */
 
 public class Exercise_05 {
+    public static void main(String[] args){
+        int [] myArray = new int [100];
 
-}
+                for (int i = 99; i < myArray.length; i -= 2){
+                    System.out.println(myArray[i]+i);
+                }
+        }
+
+    }
+
