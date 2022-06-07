@@ -19,9 +19,8 @@ public class Exercise_01 {
             int average = 0;
             for(int i = 0; i < calc.length; i++) {
                 sum += calc[i];
-                average = sum / 10;
-
             }
+            average = sum / 10;
         System.out.println("sum equals: " + sum);
         System.out.println("average equals: " + average);
 
