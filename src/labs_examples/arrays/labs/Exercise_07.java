@@ -1,5 +1,9 @@
 package labs_examples.arrays.labs;
 
+import com.sun.deploy.net.MessageHeader;
+
+import java.util.ArrayList;
+
 /**
  *  ArrayLists
  *
@@ -10,4 +14,26 @@ package labs_examples.arrays.labs;
  *
  */
 public class Exercise_07 {
-}
+
+        public static void main(String[] args){
+
+            ArrayList<String> demonstration = new ArrayList();
+            demonstration.add("Hello");
+            demonstration.add("again");
+            demonstration.add(",");
+            demonstration.add("fri**ing");
+            demonstration.add("World");
+            demonstration.add("!");
+
+            demonstration.remove(3);
+
+
+            for(String x : demonstration) {
+                System.out.print(x + " ");
+            }
+
+            }
+
+        }
+
+

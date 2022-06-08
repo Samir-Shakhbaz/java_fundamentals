@@ -14,7 +14,15 @@ import java.util.Scanner;
 
 public class Exercise_01 {
     public static void main(String[] args){
-        int [] calc = {10, 23, 44, 54, 67, 22, 25, 98, 03, 77};
+        Scanner scanner = new Scanner(System.in);
+        // prompt user
+        // assign input to variable as int
+        System.out.println("Enter a number form 1 to 10: ");
+        int number = scanner.nextInt();
+        int number2 = scanner.nextInt();
+        int number3 = scanner.nextInt();
+
+        int [] calc = {number, number2, number3, 54, 67, 22, 25, 98, 03, 77};
             int sum = 0;
             int average = 0;
             for(int i = 0; i < calc.length; i++) {

@@ -56,7 +56,8 @@ import java.util.Scanner;
                 case 12:
                     System.out.println("December");
                     break;
-
+                default:
+                    System.out.println("this is not a month");
 
             }
     }

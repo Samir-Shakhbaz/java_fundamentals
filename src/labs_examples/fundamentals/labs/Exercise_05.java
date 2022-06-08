@@ -1,38 +1,38 @@
 package labs_examples.fundamentals.labs;
 
-
 /**
- * Fundamentals Exercise 5: Working with Strings
+ * Fundamentals Exercise 4: My Second Program
  *
- *      Please follow the instructions in the comments below
+ *      Write the necessary code to display, declare and print each of Java's primitive data types.
+ *      Please declare a single variable of each type, give it an appropriate value, then print that variable.
  *
  */
 
-public class Exercise_05 {
+public class Exercise_04 {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        String str = "hello!";
-        // please declare an int variable below, and set it to the value of the length of "str"
-
-        int valueStr1 = str.length();
-                System.out.println("The value of valueStr1 is " + str.length());
-
-        String str2 = "hello";
-        // please initialize a boolean variable and test whether str is equal to str2
-        boolean equalStr = str.equalsIgnoreCase(str2);
-                System.out.println("Does str equal str2? " + equalStr);
-
-        // please concatenate str & str2 and set the result to a new String variable below
-        String strNew = str + str2;
-                System.out.println("The value of srtNew is " + str + " " + str2);
-
-        // please demonstrate the use of any other method that is available to us in the String class
-        // for example, replace(), substring(), contains(), indexOf() etc
-                System.out.println("Replace 'e' with 'a': " + str.replace('e', 'a'));
+		int i = 1;
+		System.out.println("int i is: " + i);
 
 
-                        }
+		// write your code below
 
+		byte b = 127;
+		char c = 'A';
+		long l = 87600000000000l;
+		short s = 32000;
+		boolean boo = true;
+		float f = 42348734407.1234567f;
+		double d = 83472294374029374012741047.12345678901234;
+
+		System.out.println("byte b is: " + b);
+		System.out.println("char c is: " + c);
+		System.out.println("long l is: " + l);
+		System.out.println("short s is: " + s);
+		System.out.println("boolean boo is: " + boo);
+		System.out.println("float f is: " + f);
+		System.out.println("double d is: " + d);
+	}
 
 }

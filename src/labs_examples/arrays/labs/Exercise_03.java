@@ -19,14 +19,20 @@ public class Exercise_03 {
 
     public static void main(String[] args) {
         int[][] val = new int[5][5];
-
+        int count = 0;
         for (int i = 0; i < val.length; i++) {
-            for (int j = 3; j < val[i].length; j *= 3) {
+            for (int j = 0; j < val[i].length; j++) {
+                val[i][j] = count + 3;
+                count = val[i][j];
 
-                System.out.println(val[i]);
+                System.out.print(val[i][j] + " | ");
+
+
             }
+            System.out.println();
+
         }
+//TODO: RETURN TO THIS FILE TO IMPLEMENT .....
 
     }
 }
-

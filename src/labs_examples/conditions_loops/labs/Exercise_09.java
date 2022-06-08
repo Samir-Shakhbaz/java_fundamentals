@@ -12,10 +12,12 @@ public class Exercise_09 {
         for(int x = 1; x < 100; x++){
             System.out.println("x = " + x);
             if(x == 2){
-                System.out.println("wonderful");}
-                if(x == 4){
-                    System.out.println("excellent");}
-                    if(x == 8){
+                System.out.println("wonderful");
+            }
+            if(x == 4){
+                    System.out.println("excellent");
+            }
+            if(x == 8){
                         break;
                     }
                 }

@@ -1,5 +1,7 @@
 package labs_examples.conditions_loops.labs;
 
+import java.sql.SQLOutput;
+
 /**
  * Conditions and Loops Exercise 11: Nested for loop
  *
@@ -22,5 +24,16 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_11 {
+    public static void main(String [] args){
 
-}
+        for(int x = 1; x<=10; x++) {
+
+            for(int y = 1; y<= 10; y++){
+
+                System.out.print(x * y + "|");
+            }
+            System.out.println("");
+        }
+    }
+    }
+
