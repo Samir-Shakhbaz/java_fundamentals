@@ -13,6 +13,14 @@ public class Goalies extends Players {
 
     }
 
+    public int getGoalsAllowed() {
+        return goalsAllowed;
+    }
+
+    public void setGoalsAllowed(int goalsAllowed) {
+        this.goalsAllowed = goalsAllowed;
+    }
+
     public double getRating() {
         return rating;
     }
