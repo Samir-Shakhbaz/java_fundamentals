@@ -6,8 +6,11 @@ public class Players extends Nhl {
     double height;
     int weight;
 
-    public Players(String teamName, String homeTown, int place2022) {
-        super(teamName, homeTown, place2022);
+
+
+
+    public Players(String gameName, String season, int budget, String teamName, String homeTown, int place2022, String namePlayer, double height, int weight) {
+        super(gameName, season, budget, teamName, homeTown, place2022);
         this.namePlayer = namePlayer;
         this.height = height;
         this.weight = weight;
@@ -45,4 +48,12 @@ public class Players extends Nhl {
                 ", weight=" + weight +
                 '}';
     }
+
+    public void timePlayed(){
+
+        System.out.println("Players spend a lot of time on ice");
+
+    }
+
+
 }

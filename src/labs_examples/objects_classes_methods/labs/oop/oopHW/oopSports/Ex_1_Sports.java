@@ -45,4 +45,9 @@ public class Ex_1_Sports {
                 ", budget=" + budget +
                 '}';
     }
+
+    public void promoSports(){
+        System.out.println("We promote sports");
+    }
+
 }

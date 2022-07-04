@@ -10,8 +10,8 @@ public class ForwardsDefense extends Players {
         return goalsScored;
     }
 
-    public ForwardsDefense(String gameName, String season, int budget, String teamName, String homeTown, int place2022, String namePlayer, double height, int weight) {
-        super(namePlayer, height, weight);
+    public ForwardsDefense(String gameName, String season, int budget, String teamName, String homeTown, int place2022, String namePlayer, double height, int weight, int goalsScored, int assists, double timeOnIce, double penaltyTime) {
+        super(gameName, season, budget, teamName, homeTown, place2022, namePlayer, height, weight);
         this.goalsScored = goalsScored;
         this.assists = assists;
         this.timeOnIce = timeOnIce;
@@ -42,8 +42,11 @@ public class ForwardsDefense extends Players {
         return penaltyTime;
     }
 
-    public void setPenaltyTime(double penaltyTime) {
-        this.penaltyTime = penaltyTime;
+    public void setPenaltyTime(double penaltyTime) {this.penaltyTime = penaltyTime;
+    }
+    @Override
+    public void timePlayed(){
+        System.out.println("But forwards score goals");
     }
 
     }

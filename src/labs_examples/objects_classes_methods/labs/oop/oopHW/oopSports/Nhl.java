@@ -2,16 +2,17 @@ package labs_examples.objects_classes_methods.labs.oop.oopHW.oopSports;
 
 public class Nhl extends Ex_1_Sports {
 
-        String teamName;
-        String homeTown;
-        int place2022;
+    String teamName;
+    String homeTown;
+    int place2022;
 
-    public Nhl(String gameName, String season, int budget) {
+    public Nhl(String gameName, String season, int budget, String teamName, String homeTown, int place2022) {
         super(gameName, season, budget);
         this.teamName = teamName;
         this.homeTown = homeTown;
         this.place2022 = place2022;
     }
+
     public String getTeamName() {
         return teamName;
     }
@@ -36,9 +37,12 @@ public class Nhl extends Ex_1_Sports {
         this.place2022 = place2022;
     }
 
+    @Override
+    public void promoSports() {
+        System.out.println("We promote hockey");
 
     }
 
-
+}
 
 
