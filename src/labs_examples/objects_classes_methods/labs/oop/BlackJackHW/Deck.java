@@ -56,9 +56,14 @@ public class Deck {
 
         }
 
-
-
     }
+
+//    public void playNewGame(Player player, Player computerAI){
+//        usedCards.clear();
+//        player.getHand().getCards().clear();
+//        computerAI.getHand().getCards().clear();
+//        dealCard();
+//    }
 
     private boolean ifCardUsed(int value) {
         if(usedCards.contains(value)){
