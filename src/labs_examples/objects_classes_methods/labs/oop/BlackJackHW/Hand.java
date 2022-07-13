@@ -18,6 +18,7 @@ public class Hand {
         return currentScore;
     }
 
+    // Ryan Note: formatting in this method is funky
     public boolean bustedCheck() {
 
         if (handScore() > 21)
@@ -41,6 +42,7 @@ public class Hand {
         return cards;
     }
 
+    // Ryan Note: do you need this method?
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
@@ -54,15 +56,18 @@ public class Hand {
                 '}';
     }
 
+    // Ryan Note: do you need this method?
     public int getHandValue() {
 
         return handValue;
     }
 
+    // Ryan Note: do you need this method?
     public void setHandValue(int handValue) {
         this.handValue = handValue;
     }
 
+    // Ryan Note: you do not need this method. The Arraylist class has the add() method you want to use already
     public void add(Card cardDealt) {
             return;
     }
