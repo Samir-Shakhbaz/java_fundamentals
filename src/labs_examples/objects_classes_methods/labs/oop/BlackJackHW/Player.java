@@ -13,7 +13,7 @@ public class Player {
     int potValue = 1000; //(the
 
 
-
+    // Ryan Note: formatting is wonky
     public boolean computerAI() {
 
             hand.handScore();
