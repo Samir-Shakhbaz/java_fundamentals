@@ -6,7 +6,11 @@ public class Card {
     int cardValue;
 
     public Card() {
+    }
 
+    public String customToString(){
+        String value = String.valueOf(cardValue);
+        return suit + value + suit;
     }
 
     public int getScoreValue(){
@@ -31,8 +35,6 @@ public class Card {
                 '}';
     }
 
-
-
     public Card(char suit, int cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
@@ -52,5 +54,21 @@ public class Card {
 
     public void setCardValue(int cardValue) {
         this.cardValue = cardValue;
+    }
+
+    public String print() {
+        String faceValue;
+        if (cardValue == 1) {
+            faceValue = "ACE";
+        } else if (cardValue == 11) {
+            faceValue = "JACK";
+        } else if (cardValue == 12) {
+            faceValue = "QUEEN";
+        } else if (cardValue == 13) {
+            faceValue = "KING";
+        } else {
+            faceValue = String.valueOf(cardValue);
+        }
+        return faceValue + suit;
     }
 }

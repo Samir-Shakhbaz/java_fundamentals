@@ -5,13 +5,23 @@ import java.util.*;
 public class Deck {
 
     Card[] cards = new Card[52];
-    ArrayList<Integer> usedCards;
+    ArrayList<Integer> usedCards = new ArrayList<>();
     char[] suit = {'♠', '♦', '♥', '♣'};
     int[] cardValue = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
+    public static int countNewGame = 0;
+
+    public Deck() {
+        populateDeck();
+    }
+
+    public void countGames(){
+    countNewGame++;
+        System.out.println("Game #: " + countNewGame);
+    }
     public void populateDeck() {
 
-        int counter = 0;
+     int counter = 0;
 
         for (int i = 0; i < suit.length; i++) {
 
@@ -27,43 +37,23 @@ public class Deck {
 
     public void dealCard(Player player) {
 
-        populateDeck();
-
         Random rand = new Random();
-        int cardIndex = rand.nextInt(cards.length);
+        int cardIndex;
+        do {
+            cardIndex = rand.nextInt(cards.length);
+        } while (usedCards.contains(cardIndex));
+        usedCards.add(cardIndex);
+
         Card cardDrawn = cards[cardIndex];
         player.getHand().getCards().add(cardDrawn);
-        for (int i = 0; i <= cards.length; i++) {
-            if (i == cardIndex) {
-
-            }
-        }
-
-
-        ArrayList<Card> cards = new ArrayList<>();
-        cards.add(cardDrawn);
-
-
-        ArrayList<Integer> usedCards = new ArrayList<>();
-        usedCards.add(null);
-
-
-        if (usedCards.contains(cardIndex)) {
-            dealCard(new Player());
-        } else {
-            usedCards.add(cardIndex);
-
-
-        }
-
     }
 
-//    public void playNewGame(Player player, Player computerAI){
-//        usedCards.clear();
-//        player.getHand().getCards().clear();
-//        computerAI.getHand().getCards().clear();
-//        dealCard();
-//    }
+    public void playNewGame(Player player, Player computerAI){
+        usedCards.clear();
+        player.getHand().getCards().clear();
+        computerAI.getHand().getCards().clear();
+        dealCard(player);
+    }
 
     private boolean ifCardUsed(int value) {
         if(usedCards.contains(value)){
@@ -71,13 +61,6 @@ public class Deck {
         } else {
             return false;
         }
-    }
-    public Deck() {
-    }
-
-    public Deck(Card[] cards, ArrayList<Integer> usedCards) {
-        this.cards = cards;
-        this.usedCards = usedCards;
     }
 
     public Card[] getCards() {

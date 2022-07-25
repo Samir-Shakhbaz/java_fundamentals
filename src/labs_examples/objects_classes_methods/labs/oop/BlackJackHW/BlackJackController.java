@@ -1,6 +1,7 @@
 package labs_examples.objects_classes_methods.labs.oop.BlackJackHW;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
 
 import java.sql.SQLOutput;
 import java.util.Random;
@@ -9,114 +10,99 @@ import java.util.Scanner;
 public class BlackJackController {
     public static void main(String[] args) {
 
+        Deck deck = new Deck();
+        Player player = new Player();
+        Player computerAI = new Player();
+
+        boolean continuePlaying = true;
+
         System.out.println("Hi! Would you like to play BlackJack? If 'yes', please, press 'Y', if 'no', please, press 'N'.");
 
-        BlackJackController myOpening = new BlackJackController();
-        myOpening.opening();
+        BlackJackController welcomeNewPlayer = new BlackJackController();
+        welcomeNewPlayer.opening();
 
-        System.out.println("\nMy name is Javva the Hutt. What's your name?");
+        System.out.println("\nWhat's your name?");
 
-        BlackJackController whatName = new BlackJackController();
-        whatName.name();
+        BlackJackController controller = new BlackJackController();
+        String name = controller.getPlayerName();
+        player.setName(name);
 
+        while(continuePlaying) {
+            deck.countGames();
 
-        Deck myDeal = new Deck();
-        Player myPlayer = new Player();
-        Player computerAI = new Player();
-        myDeal.dealCard(myPlayer);
-        myDeal.dealCard(computerAI);
-        myDeal.dealCard(myPlayer);
-        myDeal.dealCard(computerAI);
+            player.placeBet();
 
-        System.out.println("You have: " + myPlayer.getHand().handScore());
+            deck.usedCards.clear();
+            player.hand.cards.clear();
+            computerAI.hand.cards.clear();
 
+            deck.dealCard(player);
+            deck.dealCard(computerAI);
+            deck.dealCard(player);
+            deck.dealCard(computerAI);
 
-        do {
-            System.out.println("Would you like another card?");
-            //PLAYER HIT
+            System.out.println("Your hand is: ");
+            player.getHand().print();
+            System.out.println("\nYour score is: " + player.getHand().handScore());
 
+            player.dealAdditionalCards(deck, true);
+            computerAI.dealAdditionalCards(deck, false);
+
+            System.out.println("You have: " + player.getHand().handScore());
+            player.countWins(player, computerAI, deck);
+            System.out.println("Would you like to play again?");
             Scanner scanner = new Scanner(System.in);
-            String anotherCard = scanner.next();
-            if (anotherCard.equalsIgnoreCase("y")) {
-                System.out.println("Yes");
-                myDeal.dealCard(myPlayer);
-                System.out.println("You have: " + myPlayer.getHand().handScore());
-            } else if (anotherCard.equalsIgnoreCase("n")) {
-                System.out.println("You stay");
-                break;
+            String letsPlay = scanner.next();
+            if(letsPlay.equalsIgnoreCase("y")){
+                continuePlaying = true;
+            } else {
+                continuePlaying = false;
             }
-        } while (myPlayer.getHand().handScore() <= 20);
-        System.out.println("You have: " + myPlayer.getHand().handScore());
-
-
-
-        if (myPlayer.getHand().handScore() > 21) {
-            System.out.println("Sorry, you busted! Game is over");
         }
-        if (myPlayer.getHand().handScore() == 21) {
+    }
+
+    public static boolean determineWinner(Player player, Player computerAI) {
+        boolean humanWin = false;
+
+        if (player.getHand().handScore() > 21) {
+            System.out.println("Sorry, you busted! Game over");
+        } else if (player.getHand().handScore() == 21) {
             System.out.println("Congratulations! You've got BlackJack!");
+            System.out.println("Computer's score is: " + computerAI.getHand().handScore());
+            humanWin = true;
+        } else if (player.getHand().handScore() == computerAI.getHand().handScore()) {
+            System.out.println("We are tied. You lose ");
+        } else  if (computerAI.getHand().handScore() > 21) {
+            System.out.println("It looks like you win, Computer busted!");
+            humanWin = true;
+        } else if (computerAI.getHand().handScore() > player.getHand().handScore()){
+            System.out.println("You lose!");
+        } else {
+            System.out.println( "You win!");
+            humanWin  = true;
         }
-
-
-
-        System.out.println("Computer's score is: " + computerAI.getHand().handScore());
-
-
-        while (computerAI.getHand().handScore() <= 16) {
-            System.out.println("Computer takes another card");
-            myDeal.dealCard(computerAI);
-            System.out.println(computerAI.getHand().handScore());
-        }
-
-        if (computerAI.getHand().handScore() >= 17 && computerAI.getHand().handScore() <= 20) {
-            System.out.println("I stay: " + computerAI.getHand().handScore());
-        }
-        if (computerAI.getHand().handScore() == 21) {
-            System.out.println("Looks like I've got BlackJack! You lose! I'm invincible!");
-        }
-        if (computerAI.getHand().handScore() > 21) {
-                System.out.println("It looks like you win, Computer busted!");
-            }
-        }
-
-
+        player.adjustPot(humanWin);
+        return humanWin;
+    }
 
     public int opening() {
         Scanner scanner = new Scanner(System.in);
         String letsPlay = scanner.next();
 
-        if(letsPlay.equalsIgnoreCase("y")){
+        if (letsPlay.equalsIgnoreCase("y")) {
             System.out.println("Great choice, stranger, let's play! Has anybody ever told you that the House never wins?");
-            } else {
+        } else {
             System.out.println("Sorry, to see you go. Watch out for that door on your way out!");
         }
         return 0;
     }
-    public void name(){
+
+    public String getPlayerName() {
         Scanner scanner = new Scanner(System.in);
         String aName = scanner.nextLine();
         Player player = new Player();
-        System.out.println("\nNice to meet you, " + aName + ", let's talk business: how much are you willing to bet?");
-        System.out.println("GETTING BETS IS STILL WORK IN PROGRESS");
-        System.out.println("Right now you still have $" + player.getPotValue() + ".");
+        System.out.println("\nNice to meet you, " + aName + ".");
+        return aName;
+
     }
-
-//
-//        public void gameCounter(){
-//            int numberOfGames;
-//            Scanner gameCount = new Scanner(System.in);
-//            String letsCount = gameCount.next();
-//            if(letsCount.equalsIgnoreCase("y")){
-//                numberOfGames += 1;
-//                Deck deck = new Deck();
-//                deck.dealCard(new Player());
-//        }
-
-//    public void offerNewGame(){
-//        System.out.println("Would you like to play another game?");
-//        gameCounter();
-//        deck.playNewGame();
-//
-//    }
-
 }

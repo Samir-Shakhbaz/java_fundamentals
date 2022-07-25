@@ -8,26 +8,22 @@ public class Hand {
     ArrayList<Card> cards = new ArrayList<>();
     int handValue;
 
-
     public int handScore() {
         int currentScore = 0;
         for (Card c : cards) {
             currentScore += c.getScoreValue();
-//            System.out.println("This is current score: " + currentScore);
         }
         return currentScore;
     }
 
     public boolean bustedCheck() {
 
-        if (handScore() > 21)
-            {return true;
-        }else
-            {return false;
+        if (handScore() > 21) {
+            return true;
+        } else {
+            return false;
         }
     }
-
-
 
     public Hand() {
     }
@@ -45,7 +41,6 @@ public class Hand {
         this.cards = cards;
     }
 
-
     @Override
     public String toString() {
         return "Hand{" +
@@ -55,7 +50,6 @@ public class Hand {
     }
 
     public int getHandValue() {
-
         return handValue;
     }
 
@@ -64,6 +58,12 @@ public class Hand {
     }
 
     public void add(Card cardDealt) {
-            return;
+        return;
+    }
+
+    public void print() {
+        for (Card c : cards) {
+            System.out.print(c.print());
+        }
     }
 }
