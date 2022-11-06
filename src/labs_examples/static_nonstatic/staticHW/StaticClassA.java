@@ -5,6 +5,7 @@ public class StaticClassA {
 
 //        StaticClassB obj3 = new StaticClassB();
 //        obj3.anotherB(); ***********CANNOT CALL PRIVATE METHOD FROM A DIFFERENT CALSS*************
+        //*****
 
         StaticClassB myMethodB = new StaticClassB();
         myMethodB.justBecause();

@@ -2,6 +2,8 @@ package labs_examples.static_nonstatic.staticHW;
 
 public class StaticClassB {
 
+    //****
+
         public static void staticB(){
             System.out.println("To be or not to be");
 
