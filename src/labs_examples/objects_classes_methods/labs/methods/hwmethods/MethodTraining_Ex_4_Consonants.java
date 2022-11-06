@@ -1,4 +1,4 @@
-package labs_examples.objects_classes_methods.labs.methods.hwmethods;
+package labs_examples.objects_classes_methods.labs.methods.hwMethods;
 
 public class MethodTraining_Ex_4_Consonants {
     public static void main(String[] args) {

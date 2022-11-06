@@ -1,6 +1,6 @@
 package labs_examples.arrays.labs;
 
-import com.sun.deploy.net.MessageHeader;
+//import com.sun.deploy.net.MessageHeader;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class Exercise_07 {
             demonstration.add("Hello");
             demonstration.add("again");
             demonstration.add(",");
-            demonstration.add("fri**ing");
+            demonstration.add("beautiful");
             demonstration.add("World");
             demonstration.add("!");
 

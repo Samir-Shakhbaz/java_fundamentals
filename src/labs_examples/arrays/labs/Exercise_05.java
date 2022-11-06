@@ -10,10 +10,10 @@ package labs_examples.arrays.labs;
 
 public class Exercise_05 {
     public static void main(String[] args){
-        int [] myArray = new int [100];
+        int [] myArray = new int [101];
 
-                for (int i = 99; i >= 0; i -= 2){
-                    System.out.println(myArray[i]+i);
+                for (int i = 100; i >= 0; i -= 2){
+                    System.out.println(myArray[i] + i);
                 }
         }
 

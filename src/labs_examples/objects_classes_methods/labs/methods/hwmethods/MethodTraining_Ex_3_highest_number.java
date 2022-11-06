@@ -1,9 +1,9 @@
-package labs_examples.objects_classes_methods.labs.methods.hwmethods;
+package labs_examples.objects_classes_methods.labs.methods.hwMethods;
 
 public class MethodTraining_Ex_3_highest_number {
     public static void main(String[] args) {
 
-        int [] max = {56, 67, 78, 2};
+        int [] max = {78, 56, 67, 2};
 
         int highestNum = 0;
 

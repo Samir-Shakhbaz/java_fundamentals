@@ -1,4 +1,4 @@
-package labs_examples.objects_classes_methods.labs.methods.hwmethods;
+package labs_examples.objects_classes_methods.labs.methods.hwMethods;
 
 import java.util.Scanner;
 
