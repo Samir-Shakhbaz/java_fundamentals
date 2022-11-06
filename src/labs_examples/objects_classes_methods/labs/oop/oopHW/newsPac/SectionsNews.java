@@ -1,4 +1,4 @@
-package labs_examples.objects_classes_methods.labs.oop.oopHW;
+package labs_examples.objects_classes_methods.labs.oop.oopHW.newsPac;
 
 public class SectionsNews {
     String Politics;

@@ -1,8 +1,8 @@
-package labs_examples.objects_classes_methods.labs.oop.BlackJackHW;
+package labs_examples.objects_classes_methods.labs.oop.oopHW;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import labs_examples.objects_classes_methods.labs.oop.BlackJackHW.Deck;
+import labs_examples.objects_classes_methods.labs.oop.BlackJackHW.Player;
+
 import java.util.Scanner;
 
 public class UsefulMethods {
@@ -294,3 +294,326 @@ public class UsefulMethods {
 //          Card[] playerCard = new Card[];
 //     player.getHand().add(cardDealt);
 
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//    public void experimentalCrap(){
+//        Player player = new Player();
+//        Player computerAI = new Player();
+//        if(player.getHand().handScore() > computerAI.getHand().handScore()){
+//            player.potValue = player.potValue + player.bet;
+//        }else if (player.getHand().handScore() < computerAI.getHand().handScore()){
+//            player.potValue = player.potValue - player.bet;
+//        }
+//    }
+//
+//
+//            System.out.println("You have: " + player.getHand().handScore());
+
+//                    Hand hand = new Hand();
+//                    hand.experimentalCrap();
+//                    System.out.println("your pot value is: " + player.getPotValue());
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//BLACKJACK CHECK CODE
+//package labs_examples.objects_classes_methods.labs.oop.BlackJackHW;
+//
+//        import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+//        import org.w3c.dom.ls.LSOutput;
+//
+//        import java.sql.SQLOutput;
+//        import java.util.Random;
+//        import java.util.Scanner;
+//
+//public class BlackJackController {
+//
+//    public static void main(String[] args) {
+//
+//        Deck deck = new Deck();
+//        Player player = new Player();
+//        Player computerAI = new Player();
+//
+//        boolean continuePlaying = true;
+//
+//        System.out.println("Hi! Would you like to play BlackJack? If 'yes', please, press 'Y', if 'no', please, press 'N'.");
+//
+//        labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController welcomeNewPlayer = new labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController();
+//        welcomeNewPlayer.opening();
+//
+//        System.out.println("\nWhat's your name?");
+//
+//        labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController controller = new labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController();
+////        String name = controller.getPlayerName();
+//        player.setName(controller.getPlayerName());
+//        while(continuePlaying) {
+//
+//
+//
+//            System.out.println("Right now you still have $" + player.getPotValue() + ".");
+//
+//            player.placeBet();
+
+//            deck.usedCards.clear();
+//            player.hand.cards.clear();
+//            computerAI.hand.cards.clear();
+//
+//            deck.dealCard(player);
+//            deck.dealCard(computerAI);
+//            deck.dealCard(player);
+//            deck.dealCard(computerAI);
+//
+//            boolean x = checkForBlackJack(player, computerAI);
+//            if(x = true){
+//                System.out.println("You have: " + player.getHand().handScore());
+//                determineWinner(player, computerAI);
+//                System.out.println("Would you like to play again?");
+//                Scanner scanner = new Scanner(System.in);
+//                String letsPlay = scanner.next();
+//                if(letsPlay.equalsIgnoreCase("y")){
+//                    continuePlaying = true;
+//                } else {
+//                    continuePlaying = false;
+//                }
+//            } else {
+//
+//                System.out.println("Your hand is: ");
+//                player.getHand().print();
+//                System.out.println("\nYour score is: " + player.getHand().handScore());
+//
+//
+//                player.dealAdditionalCards(deck, true);
+//            checkForBlackJack(player, computerAI);
+//                computerAI.dealAdditionalCards(deck, false);
+//
+//
+//                System.out.println("You have: " + player.getHand().handScore());
+//                determineWinner(player, computerAI);
+//                System.out.println("Would you like to play again?");
+//                Scanner scanner = new Scanner(System.in);
+//                String letsPlay = scanner.next();
+//                if (letsPlay.equalsIgnoreCase("y")) {
+//                    continuePlaying = true;
+//                } else {
+//                    continuePlaying = false;
+//                }
+//            }
+//        }
+////        System.out.println("Good bye!");continuePlaying
+//    }
+//
+//    private static boolean checkForBlackJack(Player player, Player computerAI) {
+//        return determineWinner(player, computerAI);
+//
+//    }
+//
+//
+//    private static boolean determineWinner(Player player, Player computerAI) {
+//        boolean humanWin = false;
+//
+//        if (player.getHand().handScore() > 21) {
+//            System.out.println("Sorry, you busted! Game is over");
+//        } else if (player.getHand().handScore() == 21) {
+//            System.out.println("Congratulations! You've got BlackJack!");
+//            System.out.println("Computer's score is: " + computerAI.getHand().handScore());
+//            humanWin = true;
+//        } else if (player.getHand().handScore() == computerAI.getHand().handScore()) {
+//            System.out.println("We are tied. YOu lose ");
+//        } else  if (computerAI.getHand().handScore() > 21) {
+//            System.out.println("It looks like you win, Computer busted!");
+//            humanWin = true;
+//        } else if (computerAI.getHand().handScore() > player.getHand().handScore()){
+//            System.out.println("YOu LOse!");
+//        } else {
+//            System.out.println( " you win");
+//            humanWin  = true;
+//        }
+//        player.adjustPot(humanWin);
+//        return humanWin;
+//    }
+//
+//
+//    public int opening() {
+//        Scanner scanner = new Scanner(System.in);
+//        String letsPlay = scanner.next();
+//
+//        if(letsPlay.equalsIgnoreCase("y")){
+//            System.out.println("Great choice, stranger, let's play! Has anybody ever told you that the House never wins?");
+//        } else {
+//            System.out.println("Sorry, to see you go. Watch out for that door on your way out!");
+//        }
+//        return 0;
+//    }
+//    public String getPlayerName(){
+//        Scanner scanner = new Scanner(System.in);
+//        String aName = scanner.nextLine();
+//        Player player = new Player();
+//        System.out.println("\nNice to meet you, " + aName + ".");
+//        return aName;
+//
+//
+//    }
+
+
+//
+//        public void gameCounter(){
+//            int numberOfGames;
+//            Scanner gameCount = new Scanner(System.in);
+//            String letsCount = gameCount.next();
+//            if(letsCount.equalsIgnoreCase("y")){
+//                numberOfGames += 1;
+//                Deck deck = new Deck();
+//                deck.dealCard(new Player());
+//        }
+//
+//
+//
+//    public void keepScore(Player player, Player computerAI) {
+//
+//    }
+//
+//
+//}
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//LATEST WORKING CODE
+
+//package labs_examples.objects_classes_methods.labs.oop.BlackJackHW;
+//
+//        import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+//        import org.w3c.dom.ls.LSOutput;
+//
+//        import java.sql.SQLOutput;
+//        import java.util.Random;
+//        import java.util.Scanner;
+//
+//public class BlackJackController {
+//    public static void main(String[] args) {
+//
+//        Deck deck = new Deck();
+//        Player player = new Player();
+//        Player computerAI = new Player();
+//
+//        boolean continuePlaying = true;
+//
+//        System.out.println("Hi! Would you like to play BlackJack? If 'yes', please, press 'Y', if 'no', please, press 'N'.");
+//
+//        labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController welcomeNewPlayer = new labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController();
+//        welcomeNewPlayer.opening();
+//
+//        System.out.println("\nWhat's your name?");
+//
+//        labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController controller = new labs_examples.objects_classes_methods.labs.oop.BlackJackHW.BlackJackController();
+////      String name = controller.getPlayerName();
+//        player.setName(controller.getPlayerName());
+//        while(continuePlaying) {
+//
+//
+//            System.out.println("Right now you still have $" + player.getPotValue() + ".");
+//
+//            player.placeBet();
+//
+//            deck.usedCards.clear();
+//            player.hand.cards.clear();
+//            computerAI.hand.cards.clear();
+//
+//            deck.dealCard(player);
+//            deck.dealCard(computerAI);
+//            deck.dealCard(player);
+//            deck.dealCard(computerAI);
+//
+////            checkForBlackJack(player, computerAI);
+//
+//            System.out.println("Your hand is: ");
+//            player.getHand().print();
+//            System.out.println("\nYour score is: " + player.getHand().handScore());
+//
+//
+//            player.dealAdditionalCards(deck, true);
+////            checkForBlackJack(player, computerAI);
+//            computerAI.dealAdditionalCards(deck, false);
+//
+//
+//            System.out.println("You have: " + player.getHand().handScore());
+//            determineWinner(player, computerAI);
+//            System.out.println("Would you like to play again?");
+//            Scanner scanner = new Scanner(System.in);
+//            String letsPlay = scanner.next();
+//            if(letsPlay.equalsIgnoreCase("y")){
+//                continuePlaying = true;
+//            } else {
+//                continuePlaying = false;
+//            }
+//        }
+////        System.out.println("Good bye!");continuePlaying
+//    }
+//
+////    private static void checkForBlackJack(Player player, Player computerAI) {
+////        if(player.getHand().handScore() == 21){
+////            determineWinner(player, computerAI);
+////
+////        }
+////    }
+//
+//    private static void determineWinner(Player player, Player computerAI) {
+//        boolean humanWin = false;
+//
+//        if (player.getHand().handScore() > 21) {
+//            System.out.println("Sorry, you busted! Game is over");
+//        } else if (player.getHand().handScore() == 21) {
+//            System.out.println("Congratulations! You've got BlackJack!");
+//            System.out.println("Computer's score is: " + computerAI.getHand().handScore());
+//            humanWin = true;
+//        } else if (player.getHand().handScore() == computerAI.getHand().handScore()) {
+//            System.out.println("We are tied. YOu lose ");
+//        } else  if (computerAI.getHand().handScore() > 21) {
+//            System.out.println("It looks like you win, Computer busted!");
+//            humanWin = true;
+//        } else if (computerAI.getHand().handScore() > player.getHand().handScore()){
+//            System.out.println("YOu LOse!");
+//        } else {
+//            System.out.println( " you win");
+//            humanWin  = true;
+//        }
+//        player.adjustPot(humanWin);
+//
+//    }
+//
+//
+//    public int opening() {
+//        Scanner scanner = new Scanner(System.in);
+//        String letsPlay = scanner.next();
+//
+//        if(letsPlay.equalsIgnoreCase("y")){
+//            System.out.println("Great choice, stranger, let's play! Has anybody ever told you that the House never wins?");
+//        } else {
+//            System.out.println("Sorry, to see you go. Watch out for that door on your way out!");
+//        }
+//        return 0;
+//    }
+//    public String getPlayerName(){
+//        Scanner scanner = new Scanner(System.in);
+//        String aName = scanner.nextLine();
+//        Player player = new Player();
+//        System.out.println("\nNice to meet you, " + aName + ".");
+//        return aName;
+//
+//
+//    }
+//
+//
+////
+////        public void gameCounter(){
+////            int numberOfGames;
+////            Scanner gameCount = new Scanner(System.in);
+////            String letsCount = gameCount.next();
+////            if(letsCount.equalsIgnoreCase("y")){
+////                numberOfGames += 1;
+////                Deck deck = new Deck();
+////                deck.dealCard(new Player());
+////        }
+//
+//
+//
+//    public void keepScore(Player player, Player computerAI) {
+//
+//    }
+//
+//
+//}

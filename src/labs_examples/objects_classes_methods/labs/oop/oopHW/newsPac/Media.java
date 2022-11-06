@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.oopHW.newsPac;
 public class Media {
 
     String tv;
-    String radio
+    String radio;
     String web;
     String print;
 

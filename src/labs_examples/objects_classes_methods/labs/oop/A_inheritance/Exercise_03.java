@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Why does the output print in the order it does?
  *
- * You answer:
+ * You answer: because main method is calling C_1, which in turn extends B_1, which extends A_1. So C_1 has all the variables of the above classes and executes them in hierarchical order.
  *
  */
 
