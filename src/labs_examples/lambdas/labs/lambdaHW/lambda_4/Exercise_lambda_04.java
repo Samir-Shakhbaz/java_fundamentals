@@ -1,14 +1,7 @@
 package labs_examples.lambdas.labs.lambdaHW.lambda_4;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static jdk.nashorn.internal.objects.NativeArray.forEach;
 
 /**
  * Lambdas Exercise 4:
@@ -33,7 +26,7 @@ import static jdk.nashorn.internal.objects.NativeArray.forEach;
  *      
  */
 
-class Example {
+class Example_1 {
 
     public static void main(String[] args) throws IOException {
 
@@ -41,10 +34,5 @@ class Example {
                 .range(1,16)
                 .forEach(System.out::print);
 
-        int sum = IntStream.range(1,10).sum();
-        System.out.println(sum);
-
-
     }
-    
 }

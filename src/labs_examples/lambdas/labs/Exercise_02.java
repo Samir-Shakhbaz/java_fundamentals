@@ -1,5 +1,7 @@
 package labs_examples.lambdas.labs;
 
+
+
 /**
  * Lambdas Exercise 2:
  *
@@ -7,3 +9,4 @@ package labs_examples.lambdas.labs;
  *      10 of them! You can do it! You'll know so much about them when you're done!
  *
  */
+

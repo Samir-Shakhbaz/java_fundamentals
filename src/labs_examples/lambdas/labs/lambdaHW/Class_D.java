@@ -1,9 +1,11 @@
-package labs_examples.lambdas.labs;
+package labs_examples.lambdas.labs.lambdaHW;
 
 
 public interface Class_D {
 
-    static void myNewMethod(String string) {
-        System.out.println("Hello");
-    }
+    void greet();
+
+//    static void myNewMethod(String string) {
+//        System.out.println("Hello");
+//    }
 }

@@ -1,4 +1,4 @@
-package labs_examples.lambdas.labs;
+package labs_examples.lambdas.labs.lambdaHW.Exercise1;
 
 /**
  * Lambdas Exercise 1:
@@ -23,3 +23,14 @@ package labs_examples.lambdas.labs;
  *
  *
  */
+
+@FunctionalInterface
+public interface Exercise_01 {
+    //1)
+    void abstractMethod();
+
+
+
+
+
+}
