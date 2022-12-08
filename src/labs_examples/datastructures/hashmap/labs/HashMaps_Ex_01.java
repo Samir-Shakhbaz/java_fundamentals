@@ -24,12 +24,12 @@ public class HashMaps_Ex_01 {
             myHashMap.put("Coca-Cola", 50);
             myHashMap.put("Pepsi-Cola", 45);
             myHashMap.put("Dr.Pepper", 48);
-            myHashMap.put("Fanta", 30);
+            myHashMap.put("Coors", 30);
             myHashMap.put("Minute Maid", 40);
 
         System.out.println(myHashMap);
 
-        System.out.println(myHashMap.get("Fanta"));
+        System.out.println(myHashMap.get("Coors"));
 
         HashMap<String, Integer> newMyHashMap = new HashMap<>();
             newMyHashMap.putAll(myHashMap);
