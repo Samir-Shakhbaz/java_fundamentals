@@ -29,8 +29,11 @@
  *
  *      7.) Write queries (and paste them below) for each of the following tasks:
  *          a. select all students
+ *             SELECT ALL * FROM students;
  *          b. select all teacher who teach "Math" (choose a subject you included)
+ *              SELECT LOCATE("math", subject) FROM teachers;
  *          c. use a join query to select all students with a certain teacher
+
  *          d. use a join query to select all students with taking a certain subject
  *          e. update a record in the student table
  *          f. add a record to the teacher table
